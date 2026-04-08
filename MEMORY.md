@@ -32,9 +32,10 @@
 - **詳見**：`notes/projects/mempalace.md`（待建立）
 
 ### CF Search（個人搜尋引擎）
-- **進度**：✅ 已部署至 `https://openclaw-search.pages.dev/search`
+- **進度**：✅ cascade 完整實作（Google→被擋→fallback）；tavily API 已加入並設為 cascade 第一優先
 - **Repo**：`openclawGit200/openclaw-dashboard`（GitHub Actions 部署）
 - **URL 更新**：`skills/multi-search-engine/config.json` → `proxy_base` 已改為 stable URL
+- **已知問題**：send_email.py msg["Subject"] 未設定 → ✅ 已修（2026-04-08）
 
 ### 備份系統
 - **本地備份**：每週一 03:00 自動執行（tar.gz，~164MB）
