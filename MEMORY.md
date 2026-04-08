@@ -13,11 +13,6 @@
 
 ## Active Projects
 
-### GLM Skills
-- **進度**：3個技能已安裝，summarize-config.json 已更新為 Z_AI_API_KEY（智譜 Zhipu）
-- **API Key**：✅ 已設定
-- **詳見**：notes/research/glm-skills.md
-
 ### 台股季報爬蟲
 - **進度**：1841 檔已完成（2025-Q4，`台股季報/2025/Q4/` 目測），skills target ~1871 檔
 - **注意**：MEMORY.md 舊記錄 862/1205 口徑待確認（可能是某次中斷後重啟的子集？）
@@ -61,7 +56,6 @@
 |------|------|------|
 | OpenHarness | 2026-04-05 | 📖 研究完成，決定不安裝，借鑽架構 |
 | Agent-Threat-Rule | 2026-04-05 | 📖 研究完成，已移除安裝 |
-| GLM Skills | 2026-04-05 | ✅ 已決定安裝，已完成 |
 
 ---
 
@@ -77,12 +71,6 @@
 ---
 
 ## Lessons Learned
-
-### 2026-04-05 - ATR 不適合用來掃 Skills
- atr scan 是監控工具（吃 events.json），不是靜態掃描器。如需安全審計，用 npm audit / semgrep。
-
-### 2026-04-05 - GLM Skills 安裝
- clawhub 只支援一次裝一個，需輪流執行。VirusTotal 標記不一定是真的有害（股票工具本身就需要 external API）。
 
 ---
 
