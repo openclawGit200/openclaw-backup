@@ -15,18 +15,23 @@
 - 原因：Cloudflare Universal SSL 不支援三層 subdomain（worker.xxx.xxx.xxx）
 
 ### ✅ 目前可用：Cloudflare Pages
+
+#### openclaw-search（搜尋引擎）
 - **Pages Project**: `openclaw-search`
 - **穩定 URL**: `https://openclaw-search.pages.dev`
-- **部署方式**: GitHub Actions（`openclawGit200/openclaw-dashboard` → `deploy-search.yml`）
-- **Repo**: https://github.com/openclawGit200/openclaw-dashboard
-- **Function 路徑**: `functions/search/index.js` → 處理 `/search/` 路由
-- **正確 URL 格式**:
-  ```
-  https://openclaw-search.pages.dev/search?q=關鍵詞&engine=bing
-  ```
-- **API Token**: `.credentials/CLOUDFLARE_token.json` ✅ 已更新（cfat_...）
-- **手動觸發部署**: `gh workflow run deploy-search.yml --repo openclawGit200/openclaw-dashboard`
-- **Custom Domain**（未啟用）: `search.downtoearthclf.ddns-ip.net`
+- **Repo**: `openclawGit200/openclaw-search`
+- **Function**: `functions/search/index.js` → `/search/` route
+- **Engine**: tavily → Google → DuckDuckGo → ... 完整 cascade
+- **部署**: `gh workflow run deploy.yml --repo openclawGit200/openclaw-search`
+- **Custom Domain**: `search.downtoearthclf.ddns-ip.net`（需 Dashboard 手動加入）
+
+#### openclaw-dashboard（個人看板）
+- **Pages Project**: `openclaw-dashboard`
+- **URL**: `https://openclaw-dashboard-dv8.pages.dev` ✅ 正常
+- **Repo**: `openclawGit200/openclaw-dashboard`
+- **內容**: 6 區塊 Dashboard + D3.js 關聯圖
+- **⚠️ Custom Domain**: `openclaw-dashboard.pages.dev` 指向舊預設頁，待重新設定
+- **部署**: GitHub Actions `deploy.yml` → 自動 promote 到 production
 
 ### 支援的 Engine 參數（線上 18 個）
 | engine | 目標 | 狀態 |
@@ -78,9 +83,12 @@ https://worker.downtoearthclf.ddns-ip.net/?q={關鍵詞}&engine={引擎名}
 
 ## 待辦
 1. ~~CF API Token 已過期~~ ✅ **已解決（2026-04-08）**：Token 已更新，GitHub Actions 部署正常運行
-2. ~~移除 Sogou~~ ✅ **已完成（2026-04-07）**，透過 GitHub Actions 部署，sogou 從 engine list 移除
-3. 在 Cloudflare Pages Dashboard 加入 `search.downtoearthclf.ddns-ip.net` 為 Custom Domain
-4. ~~修復路由 `[route].js` → `search/index.js`~~ ✅ **已完成（2026-04-08）**，部署後測試成功（200 OK）
+2. ~~移除 Sogou~~ ✅ **已完成（2026-04-07）**
+3. ~~修復路由 `[route].js` → `search/index.js`~~ ✅ **已完成（2026-04-08）**
+4. ~~send_email.py msg["Subject"] 未設定~~ ✅ **已修（2026-04-08）**
+5. `openclaw-dashboard.pages.dev` 自訂網域指向舊預設頁，需重新 promote 或重新設定 Custom Domain
+6. `search.downtoearthclf.ddns-ip.net` Custom Domain 需手動透過 Dashboard 加入
+7. Tavily API Key 已加入 `.credentials/CLOUDFARE_token.json`（2026-04-08）
 
 ---
 
@@ -106,8 +114,7 @@ https://worker.downtoearthclf.ddns-ip.net/?q={關鍵詞}&engine={引擎名}
 
 ## multi-search-engine Skill 設定
 - 設定檔: `skills/multi-search-engine/config.json`
-- `proxy_base`: `https://a13fd96d.openclaw-search.pages.dev`
-- **Sogou 已設為 `disabled: true`**（本地優先，線上 Worker 移除待部署）
+- `proxy_base`: `https://openclaw-search.pages.dev` ✅ 已更新（2026-04-08）
 
 ## 重要教訓
 - Cloudflare Universal SSL 只涵蓋 apex + 一層 subdomain
