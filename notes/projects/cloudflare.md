@@ -47,12 +47,13 @@
 | weixin | 微信搜尋 | ✅ |
 | toutiao | 頭條搜索 | ✅ |
 | jisilu | 集思錄 | ✅ |
-| cascade | 引擎級聯（見下方） | ✅ |
+| **tavily** | **Tavily AI 搜尋** | **✅ 新增（2026-04-08）** |
+| cascade | 引擎級聯（tavily 優先） | ✅ |
 | zhipu | 智譜（AI 總結） | ✅ |
 
-### Cascade 順序（目前線上，已移除 Sogou）
+### Cascade 順序（目前線上）
 ```
-google → bing → duckduckgo → baidu → 360 → toutiao → weixin → jisilu → bing_cn → google_hk → brave → startpage → ecosia → qwant → yahoo
+tavily → google → bing → duckduckgo → baidu → 360 → toutiao → weixin → jisilu → bing_cn → google_hk → brave → startpage → ecosia → qwant → yahoo
 ```
 
 ### Worker 路由格式
