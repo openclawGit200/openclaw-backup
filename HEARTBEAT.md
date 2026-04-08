@@ -15,7 +15,7 @@
 - [x] **summarize API key**：已更新為 Zhipu（Z_AI_API_KEY），summarize + Zhipu(glm-5) URL/中文/stdin 正常；本地大檔案（>10KB TXT）仍 empty，是 summarize CLI 對長檔案的已知問題
 - [x] **summarize API key**：Z_AI_API_KEY 已設定並驗證（glm-5）；URL/stdin 正常，本地大檔 >10KB 仍 empty（summarize CLI bug）
 - [x] **PDF OCR**：南港 PDF 第9-11頁為圖片掃描，pypdf 讀不到，需整合 tesseract OCR（待處理）
-- [x] **CF Dashboard**：✅ v3 完成（統一記憶：notes+twse+memory+obsidian）；Jobs 改為中文名+可點擊看歷史；Research tab 移除；URL: `https://d74cc7e9.openclaw-dashboard-dv8.pages.dev/`；Repo: `openclawGit200/openclaw-dashboard`；⚠️ 自訂網域仍指向舊預設頁
+- [x] **CF Dashboard**：✅ v3 完成（統一記憶：notes+twse+memory+obsidian）；Jobs 改為中文名+可點擊看歷史+trigger顯示；Research tab 移除；URL: `https://594bb710.openclaw-dashboard-dv8.pages.dev/`（2026-04-08）；Repo: `openclawGit200/openclaw-dashboard`；排程已更新：crawler-sync=週日23:00, semantic-sync=週一23:00；⚠️ 自訂網域仍指向舊預設頁
 - [x] **MemPalace 安裝**：✅ 已安裝（pip3 + 清華鏡像）；Palace 路徑 `~/.mempalace/palace`；1876 drawers（workspace）；無需 API Key
 - [x] **Skills 清理**：移除 glmv-stock-analyst、glmocr-formula、glmv-doc-based-writing（glmv-doc-based-writing）；保留 zhipu-web-search
 
