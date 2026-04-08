@@ -31,10 +31,18 @@
 - **進度**：✅ 已安裝（pip3 + 清華鏡像）；Palace：`~/.mempalace/palace`；1876 drawers（workspace）；無需 API Key
 - **詳見**：`notes/projects/mempalace.md`（待建立）
 
+### CF Dashboard（個人看板）
+- **進度**：✅ v2 完成（6區塊：D3.js 關聯圖 + 專案/檔案/記憶/研究/定時作業）
+- **URL**: `https://openclaw-dashboard-dv8.pages.dev/`
+- **Repo**：`openclawGit200/openclaw-dashboard`（GitHub Actions，自動 promote 到 production）
+- **資料**：`public/data/data.json`（靜態 snapshot）
+- **Generator**：`scripts/generate-dashboard-data.cjs` → 更新後 commit + push 觸發部署
+- **CI 注意**：`openclaw-dashboard.pages.dev` 自訂網域待確認（目前 `dv8` subdomain 正常）
+
 ### CF Search（個人搜尋引擎）
-- **進度**：✅ cascade 完整實作（Google→被擋→fallback）；tavily API 已加入並設為 cascade 第一優先
-- **Repo**：`openclawGit200/openclaw-dashboard`（GitHub Actions 部署）
-- **URL 更新**：`skills/multi-search-engine/config.json` → `proxy_base` 已改為 stable URL
+- **進度**：✅ cascade 完整實作（tavily → Google → 被擋 → fallback）；tavily API 已加入 cascade 第一優先
+- **Repo**：`openclawGit200/openclaw-search`（GitHub Actions 部署）
+- **URL**：`https://openclaw-search.pages.dev/search?q=...&engine=...`
 - **已知問題**：send_email.py msg["Subject"] 未設定 → ✅ 已修（2026-04-08）
 
 ### 備份系統
