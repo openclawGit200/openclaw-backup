@@ -1,6 +1,6 @@
 # MEMORY.md - Long-Term Memory
 
-> Last updated: 2026-04-06
+> Last updated: 2026-04-07
 
 ---
 
@@ -13,9 +13,9 @@
 
 ## Active Projects
 
-### GLM Skills（已安裝，等待用戶提供 API Key）
-- **進度**：3個技能已安裝（glmv-stock-analyst / glmocr-formula / glmv-doc-based-writing）
-- **API Key**：等待用戶提供
+### GLM Skills
+- **進度**：3個技能已安裝，summarize-config.json 已更新為 Z_AI_API_KEY（智譜 Zhipu）
+- **API Key**：✅ 已設定
 - **詳見**：notes/research/glm-skills.md
 
 ### 台股季報爬蟲
@@ -26,6 +26,15 @@
 ### 股票報告郵件
 - **進度**：每週一自動發送，正常運行中
 - **詳見**：notes/projects/stock-report-email.md
+
+### MemPalace（記憶系統）
+- **進度**：✅ 已安裝（pip3 + 清華鏡像）；Palace：`~/.mempalace/palace`；1876 drawers（workspace）；無需 API Key
+- **詳見**：`notes/projects/mempalace.md`（待建立）
+
+### CF Search（個人搜尋引擎）
+- **進度**：✅ 已部署至 `https://openclaw-search.pages.dev/search`
+- **Repo**：`openclawGit200/openclaw-dashboard`（GitHub Actions 部署）
+- **URL 更新**：`skills/multi-search-engine/config.json` → `proxy_base` 已改為 stable URL
 
 ### 備份系統
 - **本地備份**：每週一 03:00 自動執行（tar.gz，~164MB）
